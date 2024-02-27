@@ -56,7 +56,7 @@
   background: black;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  animation: cs-scroll 2s infinite;
+  animation: cs-scroll 1.3s infinite;
 }
 
 @keyframes cs-scroll {
@@ -72,7 +72,7 @@ border: 3px solid rgba(0, 0, 0, 0.781);
 border-radius: 30px;
 background: transparent;
 padding-top: 15px;
-animation: borderFade 2s infinite;
+animation: borderFade 1s infinite;
 }
 
 @keyframes borderFade {
