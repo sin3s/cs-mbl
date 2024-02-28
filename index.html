@@ -447,23 +447,20 @@
             return randomCards;
         }
 
-        var randomCards = getRandomCards(cards, 3); // Change the number to the total number of cards
-
-        // Hide all cards first
+        var randomCards = getRandomCards(cards, 3);
         $('.card').hide();
-
-        // Create a new row
         var $newRow = $('<div>').addClass('cs-row');
-
-        // Show and reorder the randomly selected cards
         randomCards.forEach(function(card) {
             $(card).show();
-            $newRow.append($(card)); // This line reorders the cards
+            $newRow.append($(card));
         });
 
-        // Append the new row to the container
         $('.cs-mbl-cards-section').append($newRow);
-    });    
+    });
+    $(window).on('resize', function() {
+        var vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }).trigger('resize');    
   </script>
 </body>
 </html>
