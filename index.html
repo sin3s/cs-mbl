@@ -457,10 +457,21 @@
 
         $('.cs-mbl-cards-section').append($newRow);
     });
+    
+    var observer = new MutationObserver(function() {
+        $(window).off('resize');
+    });
+    
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['style']
+    });
+    
     $(window).on('resize', function() {
         var vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }).trigger('resize');    
+    }).trigger('resize');
+      
   </script>
 </body>
 </html>
